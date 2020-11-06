@@ -14,9 +14,6 @@ import com.example.deliverylist.databinding.ActivityMainBinding;
 import com.example.deliverylist.pageFirst.view.Adapter.RecyclerAdapter;
 import com.example.deliverylist.pageFirst.viewmodel.RequestViewModel;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
     public static RequestViewModel requestViewModel;
@@ -32,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         requestViewModel = ViewModelProviders.of(this).get(RequestViewModel.class);
 
-//        setUpObserver();
         setUpLiveDataObserver();
         setUpRequestAPI();
         setUpScrollViewListener();
@@ -48,15 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUpRequestAPI(){
         requestViewModel.getPosts(requestViewModel.getOffset(),20);
-    }
-
-    private void setUpObserver(){
-        requestViewModel.entityMutableLiveData.observe(this, entities -> {
-
-//            RecyclerAdapter recyclerAdapter = new RecyclerAdapter(entities);
-//            binding.itemDetailRecycler.setLayoutManager(new LinearLayoutManager(this));
-//            binding.itemDetailRecycler.setAdapter(recyclerAdapter);
-        });
     }
 
     private void setUpLiveDataObserver(){

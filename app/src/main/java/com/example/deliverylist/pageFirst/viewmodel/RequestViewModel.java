@@ -22,8 +22,6 @@ public class RequestViewModel extends ViewModel {
     private int offset = 0;
     private ArrayList<Boolean> favoriteMark = new ArrayList<>();
     public List<Entity> entityList = new ArrayList<>();
-
-    public MutableLiveData<List<Entity>> entityMutableLiveData = new MutableLiveData<>();
     public MutableLiveData<List<Entity>> addEntityMutableLiveData = new MutableLiveData<>();
 
     public void getPosts(int offset, int limit){
@@ -39,7 +37,6 @@ public class RequestViewModel extends ViewModel {
                         favoriteMark.add(false);
                     }
                 }
-//                entityMutableLiveData.setValue(response.body());
             }
 
             @Override

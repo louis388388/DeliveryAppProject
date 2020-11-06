@@ -22,7 +22,6 @@ import com.example.deliverylist.pageSecond.view.DeliveryDetailActivity;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>{
